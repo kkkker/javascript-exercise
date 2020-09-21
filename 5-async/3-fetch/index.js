@@ -14,7 +14,6 @@ function fetchData(url) {
 const URL = 'http://localhost:3000/api';
 fetchData(URL)
   .then(result => {
-    console.log(result);
     document.writeln(result.name);
   })
   .catch(error => {
