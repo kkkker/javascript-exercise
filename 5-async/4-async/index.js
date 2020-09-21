@@ -6,7 +6,7 @@ async function fetchData(url) {
     const data = await result.json();
     document.writeln(data.name);
   } catch (e) {
-    console.error(error);
+    console.error(e);
   }
   // end -->
 }
