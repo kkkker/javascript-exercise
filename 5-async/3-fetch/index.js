@@ -1,12 +1,20 @@
 function fetchData(url) {
   // <-- start
   // TODO 23: 通过Fetch API实现异步请求
+  return fetch(url).then(response => {
+    if (response.status === 200) {
+      return response.json();
+    } else {
+      return Promise.reject(response.statusText);
+    }
+  });
   // end -->
 }
 
 const URL = 'http://localhost:3000/api';
 fetchData(URL)
   .then(result => {
+    console.log(result);
     document.writeln(result.name);
   })
   .catch(error => {
